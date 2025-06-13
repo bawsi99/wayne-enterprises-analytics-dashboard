@@ -13,7 +13,7 @@ import { TrendingUp, Shield, Beaker, Truck, Users, Target } from "lucide-react";
 const Dashboard = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 text-white">
-      <div className="container mx-auto p-6">
+      <div className="p-6">
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-2">

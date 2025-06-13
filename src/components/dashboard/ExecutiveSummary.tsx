@@ -100,7 +100,7 @@ const ExecutiveSummary = () => {
                 <h3 className="font-semibold text-white">
                   {prediction.title}
                 </h3>
-                <Badge variant={prediction.confidence === "High" ? "default" : "outline"}>
+                <Badge variant={prediction.confidence === "High" ? "default" : "destructive"} className={prediction.confidence === "Medium" ? "bg-yellow-600 hover:bg-yellow-700" : ""}>
                   {prediction.confidence} Confidence
                 </Badge>
               </div>
