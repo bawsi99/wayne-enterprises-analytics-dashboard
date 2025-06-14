@@ -1,31 +1,37 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { TrendingUp, TrendingDown, AlertTriangle, CheckCircle } from "lucide-react";
 
 const ExecutiveSummary = () => {
+  // Only headlines with validated/corrected data
   const headlines = [
     {
       title: "Wayne Aerospace Soars: 25.8% Revenue Growth Validated",
-      description: "Record 2024 revenue, 25.8% growth: correction from the earlier estimate (+7.6 ppts). Market share now 24.2%.",
+      description: "Record 2024 revenue; actual growth 25.8% (+7.6 pts above earlier report). Market share validated at 24.2%.",
       trend: "up",
       impact: "high"
     },
     {
       title: "Crime Prevention: Historic 72% Drop in Gotham",
-      description: "Major revision: crime reduction now at 72% after infrastructure and tech deployment scale-up.",
+      description: "Major correction: crime reduction now 72% after technology/infrastructure ramp-up (validated).",
       trend: "up",
       impact: "high"
     },
     {
-      title: "R&D Pipeline Spending Revised: $2.4B Now Invested",
-      description: "Innovation spend increased to $2.4B (+$0.3B). Patent applications up to 318, but theoretical physics projects continue to lag expected timelines.",
-      trend: "down",
+      title: "R&D Pipeline Investment Revised to $2.4B (+$300M)",
+      description: "Innovation spend validated at $2.4B. 75 active projects; 318 patent applications (corrected, now shown).",
+      trend: "up",
       impact: "medium"
     },
     {
       title: "Employee Experience: Retention Hits 97.6%, Satisfaction 9.3/10",
-      description: "Employee satisfaction was underreported—now validated at 9.3/10 with 2.7pt gain in retention. Industry best.",
+      description: "Validated: employee satisfaction at 9.3/10 (+0.6 pts), retention 97.6%. Industry best.",
+      trend: "up",
+      impact: "medium"
+    },
+    {
+      title: "Carbon Footprint: 43% Reduction Achieved",
+      description: "43% year-over-year reduction in carbon emissions exceeds industry standards.",
       trend: "up",
       impact: "medium"
     }
@@ -38,25 +44,25 @@ const ExecutiveSummary = () => {
       factors: ["Aerospace contracts scaling", "Biotech commercialization", "Construction megaprojects"]
     },
     {
-      title: "Crime Reduction: Gotham-wide to Plateau Near 75%",
+      title: "Crime Reduction Plateau Projected at ~75%",
       confidence: "Medium",
-      factors: ["Tech deployments", "New police-AI partnerships", "Urban renewal in The Narrows"]
+      factors: ["Tech deployments", "AI predictive policing", "Urban renewal projects"]
     },
     {
-      title: "R&D Patents Expected to Exceed 350, Core success in quantum/fusion tech",
+      title: "R&D Patent Applications Expected to Exceed 350",
       confidence: "Medium",
-      factors: ["Quantum/fusion milestones", "Increased patent filings", "Stronger IP strategies"]
+      factors: ["Quantum/fusion milestones", "Accelerated filings", "IP strategy"]
     }
   ];
 
   return (
     <div className="space-y-6">
-      {/* Executive Headlines */}
+      {/* Executive Headlines - all validated/corrected */}
       <Card className="bg-slate-800/50 border-slate-700">
         <CardHeader>
           <CardTitle className="text-xl text-white">Executive Headlines</CardTitle>
           <CardDescription className="text-slate-300">
-            Key developments shaping Wayne Enterprises' future (validated data)
+            Key validated developments shaping Wayne Enterprises' future
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -84,8 +90,7 @@ const ExecutiveSummary = () => {
           ))}
         </CardContent>
       </Card>
-
-      {/* Strategic Predictions */}
+      {/* Strategic Predictions - fix medium confidence color */}
       <Card className="bg-slate-800/50 border-slate-700">
         <CardHeader>
           <CardTitle className="text-xl text-white">2025 Strategic Predictions</CardTitle>
@@ -101,8 +106,8 @@ const ExecutiveSummary = () => {
                   {prediction.title}
                 </h3>
                 <Badge
-                  variant={prediction.confidence === "High" ? "default" : "destructive"}
-                  className={prediction.confidence === "Medium" ? "bg-yellow-600 text-white hover:bg-yellow-700" : ""}
+                  variant={prediction.confidence === "High" ? "default" : "secondary"}
+                  className={prediction.confidence === "Medium" ? "bg-yellow-600 text-white hover:bg-yellow-700 border-yellow-700" : prediction.confidence === "High" ? "" : ""}
                 >
                   {prediction.confidence} Confidence
                 </Badge>
@@ -120,8 +125,7 @@ const ExecutiveSummary = () => {
           ))}
         </CardContent>
       </Card>
-
-      {/* Risk Assessment */}
+      {/* Risk Assessment (kept as is - since it relates to validated initiatives) */}
       <Card className="bg-slate-800/50 border-slate-700">
         <CardHeader>
           <CardTitle className="text-xl text-white">Strategic Risk Assessment</CardTitle>
@@ -165,4 +169,3 @@ const ExecutiveSummary = () => {
 };
 
 export default ExecutiveSummary;
-
