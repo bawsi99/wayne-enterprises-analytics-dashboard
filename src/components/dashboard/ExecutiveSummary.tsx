@@ -6,27 +6,27 @@ import { TrendingUp, TrendingDown, AlertTriangle, CheckCircle } from "lucide-rea
 const ExecutiveSummary = () => {
   const headlines = [
     {
-      title: "Wayne Aerospace Soars: 24% Revenue Growth Leads Corporate Performance",
-      description: "Q4 2024 marks record quarter with $1.95B revenue, driven by next-gen fighter jet contracts and space technology initiatives. Market share increased to 24.2%.",
+      title: "Wayne Aerospace Soars: 25.8% Revenue Growth Validated",
+      description: "Record 2024 revenue, 25.8% growth: correction from the earlier estimate (+7.6 ppts). Market share now 24.2%.",
       trend: "up",
       impact: "high"
     },
     {
-      title: "Gotham Security Revolution: Crime Prevention Effectiveness Reaches 100% in Bristol",
-      description: "Wayne Tech deployments show unprecedented success. Security incidents dropped 87% in Bristol district, with zero incidents recorded in June 2024.",
+      title: "Crime Prevention: Historic 72% Drop in Gotham",
+      description: "Major revision: crime reduction now at 72% after infrastructure and tech deployment scale-up.",
       trend: "up",
       impact: "high"
     },
     {
-      title: "R&D Pipeline Alert: $2.1B Invested, 23 High-Potential Projects at Risk",
-      description: "While innovation spending increased 18%, several theoretical physics projects face delays. Anti-gravity and dimensional portal research showing concerning timeline adherence.",
+      title: "R&D Pipeline Spending Revised: $2.4B Now Invested",
+      description: "Innovation spend increased to $2.4B (+$0.3B). Patent applications up to 318, but theoretical physics projects continue to lag expected timelines.",
       trend: "down",
       impact: "medium"
     },
     {
-      title: "The Narrows Challenge: Security Gap Persists Despite $89M Investment",
-      description: "The Narrows district remains problematic with 60+ monthly incidents. Response times improved but still lag behind other districts significantly.",
-      trend: "down",
+      title: "Employee Experience: Retention Hits 97.6%, Satisfaction 9.3/10",
+      description: "Employee satisfaction was underreported—now validated at 9.3/10 with 2.7pt gain in retention. Industry best.",
+      trend: "up",
       impact: "medium"
     }
   ];
@@ -38,14 +38,14 @@ const ExecutiveSummary = () => {
       factors: ["Aerospace contracts scaling", "Biotech commercialization", "Construction megaprojects"]
     },
     {
-      title: "Gotham Security: City-wide Safety Score 9.5/10",
+      title: "Crime Reduction: Gotham-wide to Plateau Near 75%",
       confidence: "Medium",
-      factors: ["The Narrows improvement initiative", "AI-powered prediction systems", "Community engagement programs"]
+      factors: ["Tech deployments", "New police-AI partnerships", "Urban renewal in The Narrows"]
     },
     {
-      title: "R&D Breakthrough Timeline: Q3 2025",
+      title: "R&D Patents Expected to Exceed 350, Core success in quantum/fusion tech",
       confidence: "Medium",
-      factors: ["Neural interface commercialization", "Quantum computing applications", "Fusion power pilot program"]
+      factors: ["Quantum/fusion milestones", "Increased patent filings", "Stronger IP strategies"]
     }
   ];
 
@@ -56,7 +56,7 @@ const ExecutiveSummary = () => {
         <CardHeader>
           <CardTitle className="text-xl text-white">Executive Headlines</CardTitle>
           <CardDescription className="text-slate-300">
-            Key developments shaping Wayne Enterprises' future
+            Key developments shaping Wayne Enterprises' future (validated data)
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -90,7 +90,7 @@ const ExecutiveSummary = () => {
         <CardHeader>
           <CardTitle className="text-xl text-white">2025 Strategic Predictions</CardTitle>
           <CardDescription className="text-slate-300">
-            Data-driven forecasts based on current performance trends
+            Data-driven forecasts based on validated trends and updated metrics
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -100,7 +100,10 @@ const ExecutiveSummary = () => {
                 <h3 className="font-semibold text-white">
                   {prediction.title}
                 </h3>
-                <Badge variant={prediction.confidence === "High" ? "default" : "destructive"} className={prediction.confidence === "Medium" ? "bg-yellow-600 hover:bg-yellow-700" : ""}>
+                <Badge
+                  variant={prediction.confidence === "High" ? "default" : "destructive"}
+                  className={prediction.confidence === "Medium" ? "bg-yellow-600 text-white hover:bg-yellow-700" : ""}
+                >
                   {prediction.confidence} Confidence
                 </Badge>
               </div>
@@ -162,3 +165,4 @@ const ExecutiveSummary = () => {
 };
 
 export default ExecutiveSummary;
+
