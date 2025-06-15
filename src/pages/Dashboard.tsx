@@ -33,38 +33,38 @@ const Dashboard = () => {
               <CardTitle className="text-sm font-medium text-slate-300">Total Revenue</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold text-green-400">$54.7B</div>
-              <p className="text-xs text-slate-400">2024 enterprise total</p>
+              <div className="text-2xl font-bold text-green-400">$8.2B</div>
+              <p className="text-xs text-slate-400">+25.8% vs 2023</p>
             </CardContent>
           </Card>
-
+          
           <Card className="bg-slate-800/50 border-slate-700">
             <CardHeader className="pb-2">
-              <CardTitle className="text-sm font-medium text-slate-300">Profit Margin</CardTitle>
+              <CardTitle className="text-sm font-medium text-slate-300">Security Score</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold text-blue-400">24.61%</div>
-              <p className="text-xs text-slate-400">2024 overall margin</p>
+              <div className="text-2xl font-bold text-blue-400">9.2/10</div>
+              <p className="text-xs text-slate-400">72% crime reduction</p>
             </CardContent>
           </Card>
-
+          
           <Card className="bg-slate-800/50 border-slate-700">
             <CardHeader className="pb-2">
-              <CardTitle className="text-sm font-medium text-slate-300">Total Profit</CardTitle>
+              <CardTitle className="text-sm font-medium text-slate-300">R&D Projects</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold text-purple-400">$13.5B</div>
-              <p className="text-xs text-slate-400">2024 after costs</p>
+              <div className="text-2xl font-bold text-purple-400">75</div>
+              <p className="text-xs text-slate-400">$2.4B investment</p>
             </CardContent>
           </Card>
-
+          
           <Card className="bg-slate-800/50 border-slate-700">
             <CardHeader className="pb-2">
-              <CardTitle className="text-sm font-medium text-slate-300">Total Employees</CardTitle>
+              <CardTitle className="text-sm font-medium text-slate-300">Employee Satisfaction</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold text-yellow-400">43,500</div>
-              <p className="text-xs text-slate-400">2024 enterprise headcount</p>
+              <div className="text-2xl font-bold text-yellow-400">9.3/10</div>
+              <p className="text-xs text-slate-400">97.6% retention</p>
             </CardContent>
           </Card>
         </div>
