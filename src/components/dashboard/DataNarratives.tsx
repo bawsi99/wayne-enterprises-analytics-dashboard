@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
@@ -152,6 +153,7 @@ const DataNarratives = () => {
     margin: { label: "Margin (%)", color: "#3b82f6" },
     retention: { label: "Retention (%)", color: "#10b981" },
     satisfaction: { label: "Satisfaction", color: "#8b5cf6" },
+    benefits: { label: "Benefits (%)", color: "#f59e0b" },
     disruptions: { label: "Disruptions", color: "#ef4444" },
     quality: { label: "Quality (%)", color: "#10b981" }
   };
@@ -200,6 +202,7 @@ const DataNarratives = () => {
             <ChartTooltip content={<ChartTooltipContent />} />
             <Bar dataKey="retention" fill="var(--color-retention)" />
             <Bar dataKey="satisfaction" fill="var(--color-satisfaction)" />
+            <Bar dataKey="benefits" fill="var(--color-benefits)" />
           </BarChart>
         );
       case 4:
