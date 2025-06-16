@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
@@ -157,6 +156,68 @@ const DataNarratives = () => {
     quality: { label: "Quality (%)", color: "#10b981" }
   };
 
+  const renderChart = (index: number, chartData: any[]) => {
+    switch (index) {
+      case 0:
+        return (
+          <LineChart data={chartData}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="month" />
+            <YAxis />
+            <ChartTooltip content={<ChartTooltipContent />} />
+            <Line type="monotone" dataKey="incidents" stroke="var(--color-incidents)" strokeWidth={2} />
+            <Line type="monotone" dataKey="safety" stroke="var(--color-safety)" strokeWidth={2} />
+          </LineChart>
+        );
+      case 1:
+        return (
+          <BarChart data={chartData}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="quarter" />
+            <YAxis />
+            <ChartTooltip content={<ChartTooltipContent />} />
+            <Bar dataKey="investment" fill="var(--color-investment)" />
+            <Bar dataKey="patents" fill="var(--color-patents)" />
+          </BarChart>
+        );
+      case 2:
+        return (
+          <AreaChart data={chartData}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="year" />
+            <YAxis />
+            <ChartTooltip content={<ChartTooltipContent />} />
+            <Area type="monotone" dataKey="revenue" stackId="1" stroke="var(--color-revenue)" fill="var(--color-revenue)" />
+            <Area type="monotone" dataKey="margin" stackId="2" stroke="var(--color-margin)" fill="var(--color-margin)" />
+          </AreaChart>
+        );
+      case 3:
+        return (
+          <BarChart data={chartData}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="level" />
+            <YAxis />
+            <ChartTooltip content={<ChartTooltipContent />} />
+            <Bar dataKey="retention" fill="var(--color-retention)" />
+            <Bar dataKey="satisfaction" fill="var(--color-satisfaction)" />
+          </BarChart>
+        );
+      case 4:
+        return (
+          <LineChart data={chartData}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="month" />
+            <YAxis />
+            <ChartTooltip content={<ChartTooltipContent />} />
+            <Line type="monotone" dataKey="disruptions" stroke="var(--color-disruptions)" strokeWidth={2} />
+            <Line type="monotone" dataKey="quality" stroke="var(--color-quality)" strokeWidth={2} />
+          </LineChart>
+        );
+      default:
+        return null;
+    }
+  };
+
   return (
     <div className="space-y-8">
       {/* Header */}
@@ -220,56 +281,7 @@ const DataNarratives = () => {
             {/* Chart */}
             <div className="bg-slate-700/20 rounded-lg p-4">
               <ChartContainer config={chartConfig} className="h-64">
-                {index === 0 && (
-                  <LineChart data={narrative.chartData}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="month" />
-                    <YAxis />
-                    <ChartTooltip content={<ChartTooltipContent />} />
-                    <Line type="monotone" dataKey="incidents" stroke="var(--color-incidents)" strokeWidth={2} />
-                    <Line type="monotone" dataKey="safety" stroke="var(--color-safety)" strokeWidth={2} />
-                  </LineChart>
-                )}
-                {index === 1 && (
-                  <BarChart data={narrative.chartData}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="quarter" />
-                    <YAxis />
-                    <ChartTooltip content={<ChartTooltipContent />} />
-                    <Bar dataKey="investment" fill="var(--color-investment)" />
-                    <Bar dataKey="patents" fill="var(--color-patents)" />
-                  </BarChart>
-                )}
-                {index === 2 && (
-                  <AreaChart data={narrative.chartData}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="year" />
-                    <YAxis />
-                    <ChartTooltip content={<ChartTooltipContent />} />
-                    <Area type="monotone" dataKey="revenue" stackId="1" stroke="var(--color-revenue)" fill="var(--color-revenue)" />
-                    <Area type="monotone" dataKey="margin" stackId="2" stroke="var(--color-margin)" fill="var(--color-margin)" />
-                  </AreaChart>
-                )}
-                {index === 3 && (
-                  <BarChart data={narrative.chartData}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="level" />
-                    <YAxis />
-                    <ChartTooltip content={<ChartTooltipContent />} />
-                    <Bar dataKey="retention" fill="var(--color-retention)" />
-                    <Bar dataKey="satisfaction" fill="var(--color-satisfaction)" />
-                  </BarChart>
-                )}
-                {index === 4 && (
-                  <LineChart data={narrative.chartData}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="month" />
-                    <YAxis />
-                    <ChartTooltip content={<ChartTooltipContent />} />
-                    <Line type="monotone" dataKey="disruptions" stroke="var(--color-disruptions)" strokeWidth={2} />
-                    <Line type="monotone" dataKey="quality" stroke="var(--color-quality)" strokeWidth={2} />
-                  </LineChart>
-                )}
+                {renderChart(index, narrative.chartData)}
               </ChartContainer>
             </div>
 
