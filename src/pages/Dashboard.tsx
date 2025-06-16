@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -9,7 +10,10 @@ import HRAnalytics from "@/components/dashboard/HRAnalytics";
 import ExecutiveSummary from "@/components/dashboard/ExecutiveSummary";
 import EnvironmentalMetrics from "@/components/dashboard/EnvironmentalMetrics";
 import StrategicInsights from "@/components/dashboard/StrategicInsights";
-import { TrendingUp, Shield, Beaker, Truck, Users, Target } from "lucide-react";
+import CEOReport from "@/components/dashboard/CEOReport";
+import PredictiveAnalytics from "@/components/dashboard/PredictiveAnalytics";
+import DataNarratives from "@/components/dashboard/DataNarratives";
+import { TrendingUp, Shield, Beaker, Truck, Users, Target, FileText, Brain, Newspaper } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 const Dashboard = () => {
@@ -24,6 +28,20 @@ const Dashboard = () => {
           <p className="text-slate-300 text-lg">
             Strategic Intelligence Dashboard • CEO Report 2024
           </p>
+          <div className="flex gap-2 mt-4">
+            <Badge variant="secondary" className="bg-green-500/20 text-green-400">
+              Revenue: $54.7B (+25.8%)
+            </Badge>
+            <Badge variant="secondary" className="bg-blue-500/20 text-blue-400">
+              Crime Reduction: 72%
+            </Badge>
+            <Badge variant="secondary" className="bg-purple-500/20 text-purple-400">
+              R&D Investment: $2.4B
+            </Badge>
+            <Badge variant="secondary" className="bg-yellow-500/20 text-yellow-400">
+              Employee Retention: 97.6%
+            </Badge>
+          </div>
         </div>
 
         {/* Key Metrics Cards */}
@@ -70,8 +88,20 @@ const Dashboard = () => {
         </div>
 
         {/* Main Dashboard Tabs */}
-        <Tabs defaultValue="executive" className="space-y-6">
-          <TabsList className="grid w-full grid-cols-6 bg-slate-800/50">
+        <Tabs defaultValue="ceo-report" className="space-y-6">
+          <TabsList className="grid w-full grid-cols-8 bg-slate-800/50">
+            <TabsTrigger value="ceo-report" className="flex items-center gap-2">
+              <FileText className="w-4 h-4" />
+              CEO Report
+            </TabsTrigger>
+            <TabsTrigger value="narratives" className="flex items-center gap-2">
+              <Newspaper className="w-4 h-4" />
+              Narratives
+            </TabsTrigger>
+            <TabsTrigger value="predictions" className="flex items-center gap-2">
+              <Brain className="w-4 h-4" />
+              Predictions
+            </TabsTrigger>
             <TabsTrigger value="executive" className="flex items-center gap-2">
               <Target className="w-4 h-4" />
               Executive
@@ -88,15 +118,23 @@ const Dashboard = () => {
               <Beaker className="w-4 h-4" />
               R&D
             </TabsTrigger>
-            <TabsTrigger value="supply" className="flex items-center gap-2">
-              <Truck className="w-4 h-4" />
-              Supply Chain
-            </TabsTrigger>
             <TabsTrigger value="hr" className="flex items-center gap-2">
               <Users className="w-4 h-4" />
               HR Analytics
             </TabsTrigger>
           </TabsList>
+
+          <TabsContent value="ceo-report">
+            <CEOReport />
+          </TabsContent>
+
+          <TabsContent value="narratives">
+            <DataNarratives />
+          </TabsContent>
+
+          <TabsContent value="predictions">
+            <PredictiveAnalytics />
+          </TabsContent>
 
           <TabsContent value="executive">
             <div className="space-y-4">
@@ -160,10 +198,6 @@ const Dashboard = () => {
               <RDPortfolio />
               <EnvironmentalMetrics />
             </div>
-          </TabsContent>
-          
-          <TabsContent value="supply">
-            <SupplyChainMetrics />
           </TabsContent>
           
           <TabsContent value="hr">
