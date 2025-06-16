@@ -161,9 +161,9 @@ const DataNarratives = () => {
       case 0:
         return (
           <LineChart data={chartData}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="month" />
-            <YAxis />
+            <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
+            <XAxis dataKey="month" tick={{ fill: '#9ca3af', fontSize: 12 }} />
+            <YAxis tick={{ fill: '#9ca3af', fontSize: 12 }} />
             <ChartTooltip content={<ChartTooltipContent />} />
             <Line type="monotone" dataKey="incidents" stroke="var(--color-incidents)" strokeWidth={2} />
             <Line type="monotone" dataKey="safety" stroke="var(--color-safety)" strokeWidth={2} />
@@ -172,9 +172,9 @@ const DataNarratives = () => {
       case 1:
         return (
           <BarChart data={chartData}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="quarter" />
-            <YAxis />
+            <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
+            <XAxis dataKey="quarter" tick={{ fill: '#9ca3af', fontSize: 12 }} />
+            <YAxis tick={{ fill: '#9ca3af', fontSize: 12 }} />
             <ChartTooltip content={<ChartTooltipContent />} />
             <Bar dataKey="investment" fill="var(--color-investment)" />
             <Bar dataKey="patents" fill="var(--color-patents)" />
@@ -183,9 +183,9 @@ const DataNarratives = () => {
       case 2:
         return (
           <AreaChart data={chartData}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="year" />
-            <YAxis />
+            <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
+            <XAxis dataKey="year" tick={{ fill: '#9ca3af', fontSize: 12 }} />
+            <YAxis tick={{ fill: '#9ca3af', fontSize: 12 }} />
             <ChartTooltip content={<ChartTooltipContent />} />
             <Area type="monotone" dataKey="revenue" stackId="1" stroke="var(--color-revenue)" fill="var(--color-revenue)" />
             <Area type="monotone" dataKey="margin" stackId="2" stroke="var(--color-margin)" fill="var(--color-margin)" />
@@ -194,9 +194,9 @@ const DataNarratives = () => {
       case 3:
         return (
           <BarChart data={chartData}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="level" />
-            <YAxis />
+            <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
+            <XAxis dataKey="level" tick={{ fill: '#9ca3af', fontSize: 12 }} />
+            <YAxis tick={{ fill: '#9ca3af', fontSize: 12 }} />
             <ChartTooltip content={<ChartTooltipContent />} />
             <Bar dataKey="retention" fill="var(--color-retention)" />
             <Bar dataKey="satisfaction" fill="var(--color-satisfaction)" />
@@ -205,9 +205,9 @@ const DataNarratives = () => {
       case 4:
         return (
           <LineChart data={chartData}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="month" />
-            <YAxis />
+            <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
+            <XAxis dataKey="month" tick={{ fill: '#9ca3af', fontSize: 12 }} />
+            <YAxis tick={{ fill: '#9ca3af', fontSize: 12 }} />
             <ChartTooltip content={<ChartTooltipContent />} />
             <Line type="monotone" dataKey="disruptions" stroke="var(--color-disruptions)" strokeWidth={2} />
             <Line type="monotone" dataKey="quality" stroke="var(--color-quality)" strokeWidth={2} />
@@ -238,7 +238,7 @@ const DataNarratives = () => {
               <div className="flex items-center gap-3">
                 <narrative.icon className={`w-6 h-6 text-${narrative.color}-400`} />
                 <div>
-                  <Badge variant="outline" className="mb-2">
+                  <Badge variant="outline" className="mb-2 border-slate-600 text-slate-300">
                     {narrative.category}
                   </Badge>
                   <p className="text-sm text-slate-400">{narrative.date}</p>
@@ -272,8 +272,8 @@ const DataNarratives = () => {
                   <div className={`text-lg font-bold text-${narrative.color}-400`}>
                     {stat.value}
                   </div>
-                  <div className="text-xs text-slate-400 mb-1">{stat.label}</div>
-                  <div className="text-xs text-slate-500">{stat.change}</div>
+                  <div className="text-xs text-slate-300 mb-1">{stat.label}</div>
+                  <div className="text-xs text-slate-400">{stat.change}</div>
                 </div>
               ))}
             </div>
