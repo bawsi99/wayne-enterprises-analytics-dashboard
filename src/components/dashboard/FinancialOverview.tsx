@@ -96,15 +96,15 @@ const FinancialOverview = () => {
               Record Revenue: $54.7B Total (24.61% Profit Margin)
             </h3>
             <p className="text-slate-300">
-              Wayne Enterprises achieves highest annual revenue with $13.5B total profit across all divisions.
+              Wayne Enterprises achieved highest annual revenue with $13.5B total profit across all major divisions in 2024.
             </p>
           </div>
           <div className="border-l-4 border-purple-500 pl-4 py-3">
             <h3 className="font-semibold text-white text-lg">
-              Biotech Excellence: 29.18% Profit Margin Leads All Divisions
+              Biotech Excellence: 29.18% Profit Margin
             </h3>
             <p className="text-slate-300">
-              Wayne Biotech demonstrates strongest profitability with highest R&D correlation (0.37) for revenue growth.
+              Wayne Biotech delivered the highest profit margin (29.18%) and strong R&D ROI among all business units.
             </p>
           </div>
           <div className="border-l-4 border-blue-500 pl-4 py-3">
@@ -112,7 +112,7 @@ const FinancialOverview = () => {
               Construction Scale: $21.9B Revenue (40% of Total)
             </h3>
             <p className="text-slate-300">
-              Largest division by revenue despite lower margin, driving overall enterprise growth.
+              Construction remains the largest revenue driver, but with a moderate 23.62% margin.
             </p>
           </div>
         </CardContent>
