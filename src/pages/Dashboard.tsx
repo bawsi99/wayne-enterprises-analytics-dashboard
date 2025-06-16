@@ -28,7 +28,7 @@ const Dashboard = () => {
           <p className="text-slate-300 text-lg">
             Strategic Intelligence Dashboard • CEO Report 2024
           </p>
-          <div className="flex gap-2 mt-4">
+          <div className="flex justify-between w-full mt-4">
             <Badge variant="secondary" className="bg-green-500/20 text-green-400">
               Revenue: $54.7B (+25.8%)
             </Badge>
