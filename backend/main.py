@@ -15,7 +15,8 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:3000",    # Next.js default port
         "http://127.0.0.1:3000",   # Next.js alternative
-        "https://wayne-enterprises-dashboard.vercel.app",  # Production domain (adjust as needed)
+        "https://wayne-enterprises-analytics-dashboard.vercel.app",  # Your actual Vercel domain
+        "https://wayne-enterprises-analytics-dashboard-*.vercel.app",  # Vercel preview deployments
     ],
     allow_credentials=True,
     allow_methods=["GET"],  # Only allow GET methods for this read-only API
