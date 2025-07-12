@@ -1,100 +1,79 @@
-# Wayne Enterprises Data Analysis Platform
+# Wayne Enterprises Dashboard
 
-## Project Overview
+A full-stack business intelligence dashboard for Wayne Enterprises, featuring a FastAPI backend and a Next.js frontend. The dashboard visualizes key financial, HR, and operational metrics for executive decision-making.
 
-This platform provides comprehensive data analysis and reporting capabilities for Wayne Enterprises' various business divisions. The system processes financial, HR, R&D, security, and supply chain data to generate detailed insights and strategic recommendations.
+---
 
-## Features
+## Project Structure
 
-- **Financial Analysis**: Track revenue, costs, and profit margins across all divisions
-- **HR Analytics**: Monitor employee satisfaction, retention, and growth
-- **R&D Portfolio Management**: Track innovation projects and investments
-- **Security Metrics**: Monitor security incidents and prevention effectiveness
-- **Supply Chain Analytics**: Analyze operational efficiency and logistics
+```
+wayne-enterprises-dashboard-react/
+  backend/         # FastAPI backend (API, data processing)
+  frontend-next/   # Next.js frontend (dashboard UI)
+```
 
-## Data Sources
+---
 
-The platform integrates data from multiple sources:
-- `wayne_financial_data.csv`: Financial performance metrics
-- `wayne_hr_analytics.csv`: Human resources and employee data
-- `wayne_rd_portfolio.csv`: Research and development projects
-- `wayne_security_data.csv`: Security operations and incidents
-- `wayne_supply_chain.csv`: Supply chain and logistics metrics
+## Setup Instructions
 
-## Reports
+### 1. Backend (FastAPI)
 
-The platform generates various reports including:
-- Executive Reports
-- Financial Analysis Reports
-- Strategic Intelligence Reports
-- Performance Analysis Reports
+```bash
+cd backend
+# (Optional) Create a virtual environment
+# python3 -m venv venv && source venv/bin/activate
+pip install -r requirements.txt
 
-## Technology Stack
+# Start the FastAPI server
+uvicorn main:app --reload --port 8000
+```
 
-- **Frontend**: React with TypeScript
-- **UI Components**: shadcn-ui
-- **Styling**: Tailwind CSS
-- **Build Tool**: Vite
-- **Development**: Node.js & npm
+- The backend will be available at http://127.0.0.1:8000
+- API docs: http://127.0.0.1:8000/docs
 
-## Getting Started
+### 2. Frontend (Next.js)
 
-### Prerequisites
-
-- Node.js (v16 or higher)
-- npm (v7 or higher)
-
-### Installation
-
-```sh
-# Clone the repository
-git clone <repository-url>
-
-# Navigate to project directory
-cd wayne-enterprises-analysis
-
-# Install dependencies
+```bash
+cd frontend-next
 npm install
-
-# Start development server
 npm run dev
 ```
 
-## Development
+- The frontend will be available at http://localhost:3000 (default Next.js port)
 
-### Project Structure
+---
 
-```
-├── src/
-│   ├── components/     # React components
-│   ├── reports/        # Generated reports
-│   ├── hooks/         # Custom React hooks
-│   ├── lib/           # Utility functions
-│   └── pages/         # Application pages
-├── public/            # Static assets
-└── data/             # CSV data files
-```
+## Features
+- Executive summary with live metrics
+- Revenue trends and profit charts
+- Department performance and employee distribution
+- Data narrative section with headline and supporting visualization
+- Professional, executive-ready UI (Tailwind CSS)
+- Server-side rendering and optimized performance with Next.js
 
-### Available Scripts
+---
 
-- `npm run dev`: Start development server
-- `npm run build`: Build for production
-- `npm run preview`: Preview production build
-- `npm run lint`: Run ESLint
-- `npm run type-check`: Run TypeScript type checking
+## Data
+- Sample/mock data is located in `backend/data/` as CSV files.
+- The backend processes and serves analytics via API endpoints.
 
-## Contributing
+---
 
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
+## API Endpoints
+- `/summary` — Key metrics (revenue, profit, employees, avg salary)
+- `/revenue-trends` — Revenue and profit over years
+- `/department-performance` — Department KPIs
+- `/employee-distribution` — Employee counts per department
+- `/data-narrative` — Headline, narrative, and supporting data
+
+---
+
+## Development Notes
+- For rapid prototyping, CORS is enabled for all origins (update for production).
+- To change mock data, edit the CSVs in `backend/data/` and restart the backend.
+- The dashboard is accessible at `/dashboard` route in the Next.js app.
+
+---
 
 ## License
-
-This project is proprietary and confidential. All rights reserved by Wayne Enterprises.
-
-## Contact
-
-For questions or support, contact the Wayne Enterprises IT Department.
+Fictional project for demonstration purposes only.
