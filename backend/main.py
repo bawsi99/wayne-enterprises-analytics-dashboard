@@ -17,6 +17,7 @@ app.add_middleware(
         "http://127.0.0.1:3000",   # Next.js alternative
         "https://wayne-enterprises-analytics-dashboard.vercel.app",  # Your actual Vercel domain
         "https://wayne-enterprises-analytics-dashboard-*.vercel.app",  # Vercel preview deployments
+        "https://*.vercel.app",  # Temporary wildcard for all Vercel domains
     ],
     allow_credentials=True,
     allow_methods=["GET"],  # Only allow GET methods for this read-only API
